@@ -129,7 +129,6 @@ namespace RAYTRACING_LAB_3
                 new Vector3( 1f, -1f, 0f),
                 new Vector3( 1f,  1f, 0f),
                 new Vector3(-1f,  1f, 0f)};
-
             GL.GenBuffers(1, out vbo_position);
 
             GL.BindBuffer(BufferTarget.ArrayBuffer, vbo_position); GL.BufferData<Vector3>(BufferTarget.ArrayBuffer, (IntPtr)(vertdata.Length * Vector3.SizeInBytes), vertdata, BufferUsageHint.StaticDraw);

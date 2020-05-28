@@ -40,28 +40,13 @@ namespace RAYTRACING_LAB_3
             trackBar3.Minimum = 100;
             trackBar3.Maximum = 500;
             needReload = false;
-        }
-
-        void dispalyFPS()
-        {
-            if (DateTime.Now >= NextFPSUpdate)
-            {
-                this.Text = String.Format("(fps = {0})", frameCount);
-                NextFPSUpdate = DateTime.Now.AddSeconds(1);
-                frameCount = 0;
-            }
-            frameCount++;
+            this.Text = String.Format("scene_1", frameCount);
         }
 
         private void glControl1_Paint(object sender, PaintEventArgs e)
         {
             if (loaded)
             {
-                if (needReload)
-                {
-                    view.InitShaders();
-                    needReload = false;
-                }
                 view.DrawNewFrame();
                 glControl1.SwapBuffers();
                 GL.UseProgram(0);
@@ -83,7 +68,6 @@ namespace RAYTRACING_LAB_3
         {
             while (glControl1.IsIdle)
             {
-                dispalyFPS();
                 glControl1.Invalidate();
                 view.initVBO();
             }
