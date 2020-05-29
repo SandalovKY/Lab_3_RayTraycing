@@ -21,7 +21,6 @@ namespace RAYTRACING_LAB_3
         int frameCount;
         DateTime NextFPSUpdate;
         Vector3 selectedColor;
-        bool needReload;
         
         public Form1()
         {
@@ -39,7 +38,6 @@ namespace RAYTRACING_LAB_3
             trackBar2.Maximum = 500;
             trackBar3.Minimum = 100;
             trackBar3.Maximum = 500;
-            needReload = false;
             this.Text = String.Format("scene_1", frameCount);
         }
 
@@ -69,20 +67,16 @@ namespace RAYTRACING_LAB_3
             while (glControl1.IsIdle)
             {
                 glControl1.Invalidate();
-                view.initVBO();
             }
         }
 
         private void Form1_SizeChanged(object sender, EventArgs e)
         {
-
-            needReload = true;
             glControl1.Update();
         }
 
         private void glControl1_SizeChanged(object sender, EventArgs e)
         {
-            needReload = true;
             glControl1.Update();
         }
 

@@ -93,11 +93,46 @@ namespace RAYTRACING_LAB_3
         }
         public void DrawNewFrame()
         {
+            GL.UseProgram(BasicProgramID);
+            GL.Uniform1(GL.GetUniformLocation(BasicProgramID, "BigSphere"), BigSphere);
+            GL.Uniform3(GL.GetUniformLocation(BasicProgramID, "ColBigSphere"), ref ColorBigSphere);
+            GL.Uniform1(GL.GetUniformLocation(BasicProgramID, "SmallSphere"), SmallSphere);
+            GL.Uniform3(GL.GetUniformLocation(BasicProgramID, "ColSmallSphere"), ref ColorSmallSphere);
+            GL.Uniform3(GL.GetUniformLocation(BasicProgramID, "ColCube"), ref ColorCube);
+            GL.Uniform3(GL.GetUniformLocation(BasicProgramID, "ColTetr"), ref ColorTetraeder);
+            GL.Uniform1(GL.GetUniformLocation(BasicProgramID, "Cube"), Cube);
+            GL.Uniform1(GL.GetUniformLocation(BasicProgramID, "Tetr"), Tetraeder);
+
+            GL.Uniform1(GL.GetUniformLocation(BasicProgramID, "utetr"), tetr);
+            GL.Uniform1(GL.GetUniformLocation(BasicProgramID, "ubigs"), bigSphere);
+            GL.Uniform1(GL.GetUniformLocation(BasicProgramID, "usmalls"), smallSphere);
+            GL.Uniform1(GL.GetUniformLocation(BasicProgramID, "ucube"), cube);
+
+            GL.Uniform3(GL.GetUniformLocation(BasicProgramID, "ColBack"), ref ColorBack);
+            GL.Uniform3(GL.GetUniformLocation(BasicProgramID, "ColFront"), ref ColorFront);
+            GL.Uniform3(GL.GetUniformLocation(BasicProgramID, "ColLeft"), ref ColorLeft);
+            GL.Uniform3(GL.GetUniformLocation(BasicProgramID, "ColRight"), ref ColorRight);
+            GL.Uniform3(GL.GetUniformLocation(BasicProgramID, "ColTop"), ref ColorTop);
+            GL.Uniform3(GL.GetUniformLocation(BasicProgramID, "ColBot"), ref ColorBottom);
+
+            GL.Uniform1(GL.GetUniformLocation(BasicProgramID, "Back"), Back);
+            GL.Uniform1(GL.GetUniformLocation(BasicProgramID, "Front"), Front);
+            GL.Uniform1(GL.GetUniformLocation(BasicProgramID, "Left"), Left);
+            GL.Uniform1(GL.GetUniformLocation(BasicProgramID, "Right"), Right);
+            GL.Uniform1(GL.GetUniformLocation(BasicProgramID, "Top"), Top);
+            GL.Uniform1(GL.GetUniformLocation(BasicProgramID, "Bot"), Bottom);
+            GL.Uniform1(GL.GetUniformLocation(BasicProgramID, "RTDepth"), RTDepth);
+            GL.Uniform1(GL.GetUniformLocation(BasicProgramID, "bigCf"), bigCf);
+            GL.Uniform1(GL.GetUniformLocation(BasicProgramID, "bigRCf"), bigRCf);
+            GL.Uniform1(GL.GetUniformLocation(BasicProgramID, "wallCf"), wallCf);
+            GL.Uniform1(GL.GetUniformLocation(BasicProgramID, "wallRCf"), wallRCf);
+            GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
             GL.Enable(EnableCap.Texture2D);
             GL.EnableVertexAttribArray(attribute_vpos);
             GL.DrawArrays(PrimitiveType.Quads, 0, 4);
             GL.DisableVertexAttribArray(attribute_vpos);
+
         }
         public void InitShaders()
         {
