@@ -12,10 +12,10 @@ uniform vec3 ColTetr;
 uniform int Cube;
 uniform int Tetr;
 
-uniform float utetr;
-uniform float ucube;
-uniform float ubigs;
-uniform float usmalls;
+uniform int utetr;
+uniform int ucube;
+uniform int ubigs;
+uniform int usmalls;
 
 uniform vec3 ColBack;
 uniform int Back;
@@ -503,7 +503,7 @@ bool Raytrace ( SRay ray, float start, float final, inout SIntersection intersec
 	bool result = false;
 	float test = start;
 	intersect.Time = final;
-	if (ubigs != 0.0)
+	if (ubigs != 0)
 	{
 		SSphere sphere = spheres[0];
 		if(test < intersect.Time && IntersectSphere (sphere, ray, start, final, test ))
@@ -519,7 +519,7 @@ bool Raytrace ( SRay ray, float start, float final, inout SIntersection intersec
 			result = true;
 		}
 	}
-	if (usmalls != 0.0)
+	if (usmalls != 0)
 	{
 		SSphere sphere = spheres[1];
 		if(test < intersect.Time && IntersectSphere (sphere, ray, start, final, test ))
@@ -553,7 +553,7 @@ bool Raytrace ( SRay ray, float start, float final, inout SIntersection intersec
 			result = true;
 		}
 	}
-	if (ucube != 0.0)
+	if (ucube != 0)
 	for(int i = 0; i < 12; i++)
 	{
 		STriangle triangle = qu[i];
@@ -571,7 +571,7 @@ bool Raytrace ( SRay ray, float start, float final, inout SIntersection intersec
 			result = true;
 		}
 	}
-	if (utetr != 0.0)
+	if (utetr != 0)
 	for(int i = 0; i < 4; ++i)
 	{
 		STriangle triangle = tetr[i];

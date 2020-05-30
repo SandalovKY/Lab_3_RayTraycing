@@ -84,33 +84,33 @@ namespace RAYTRACING_LAB_3
         {
             if (checkBox1.Checked)
             {
-                view.cube = 1.0f;
+                view.cube = 1;
             }
             else
             {
-                view.cube = 0.0f;
+                view.cube = 0;
             }
         }
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox2.Checked)
             {
-                view.tetr = 1.0f;
+                view.tetr = 1;
             }
             else
             {
-                view.tetr = 0.0f;
+                view.tetr = 0;
             }
         }
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox3.Checked)
             {
-                view.bigSphere = 1.0f;
+                view.bigSphere = 1;
             }
             else
             {
-                view.bigSphere = 0.0f;
+                view.bigSphere = 0;
             }
         }
 
@@ -309,11 +309,11 @@ namespace RAYTRACING_LAB_3
         {
             if (checkBox4.Checked)
             {
-                view.smallSphere = 1.0f;
+                view.smallSphere = 1;
             }
             else
             {
-                view.smallSphere = 0.0f;
+                view.smallSphere = 0;
             }
         }
 

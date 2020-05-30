@@ -23,7 +23,7 @@ namespace RAYTRACING_LAB_3
         int uniform_aspect;
         int aspect;
 
-        public float tetr, cube, bigSphere, smallSphere;
+        public int tetr, cube, bigSphere, smallSphere;
 
         public float dt;
 
@@ -75,8 +75,8 @@ namespace RAYTRACING_LAB_3
             BigSphere = 2;
             ColorSmallSphere = new Vector3(0.0f, 1.0f, 0.0f);
             dt = 1;
-            tetr = 0.0f; cube = 0.0f;
-            bigSphere = 0.0f; smallSphere = 0.0f;
+            tetr = 0; cube = 0;
+            bigSphere = 0; smallSphere = 0;
 
             Tetraeder = 2;
             ColorTetraeder = new Vector3(0.0f, 1.0f, 0.0f);
