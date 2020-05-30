@@ -25,7 +25,6 @@ namespace RAYTRACING_LAB_3
 
         public int tetr, cube, bigSphere, smallSphere;
 
-        public float dt;
 
         public int BigSphere;
         public Vector3 ColorBigSphere;
@@ -74,7 +73,6 @@ namespace RAYTRACING_LAB_3
             SmallSphere = 2;
             BigSphere = 2;
             ColorSmallSphere = new Vector3(0.0f, 1.0f, 0.0f);
-            dt = 1;
             tetr = 0; cube = 0;
             bigSphere = 0; smallSphere = 0;
 
