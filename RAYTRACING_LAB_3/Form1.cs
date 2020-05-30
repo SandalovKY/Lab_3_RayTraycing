@@ -18,8 +18,6 @@ namespace RAYTRACING_LAB_3
     {
         View view;
         bool loaded;
-        int frameCount;
-        DateTime NextFPSUpdate;
         Vector3 selectedColor;
         
         public Form1()
@@ -27,8 +25,6 @@ namespace RAYTRACING_LAB_3
             InitializeComponent();
             view = new View();
             loaded = false;
-            frameCount = 0;
-            NextFPSUpdate = DateTime.Now.AddSeconds(1);
             selectedColor = new Vector3(0.7f, 0.5f, 0.9f);
             comboBox2.SelectedIndex = 1;
             trackBar1.Maximum = 1;
@@ -38,7 +34,7 @@ namespace RAYTRACING_LAB_3
             trackBar2.Maximum = 500;
             trackBar3.Minimum = 100;
             trackBar3.Maximum = 500;
-            this.Text = String.Format("scene_1", frameCount);
+            this.Text = String.Format("scene_1");
         }
 
         private void glControl1_Paint(object sender, PaintEventArgs e)
